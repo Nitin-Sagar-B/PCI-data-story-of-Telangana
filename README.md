@@ -41,7 +41,7 @@ Check out the interactive visualizations that illustrate the changes in PCI acro
 
 In conclusion, this study reveals a **dynamic** and **complex** economic narrative of Telangana's PCI growth from 2015 to 2024. 
 
-> “Per capita income is a crucial measure of a country's economic success.” — [Famous Economist]
+> "The most important thing for a country's economic growth is the welfare of its people, which is reflected in their per capita income." — [Amartya Sen]
 
 ### 📚 Data Sources:
 - NITI Aayog Database
