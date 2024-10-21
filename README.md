@@ -1,6 +1,8 @@
 # 📈 PCI Growth Analysis of Telangana (2015-2024)
 
 Welcome to the **PCI Growth Analysis of Telangana**! 🚀 This data storytelling project aims to uncover the fascinating journey of **Per Capita Income (PCI)** in Telangana over the past decade. Join me as we explore the significant factors, events, and trends that have shaped the economic landscape of this vibrant state! 🌟
+## Visit the web data story live: [Click here](https://nitin-sagar-b.github.io/PCI-data-story-of-Telangana/)
+### Note: Please avoid viewing from mobile screens as the website is still a progressive work in process, thanks!
 
 ## 🌐 Table of Contents
 
@@ -23,7 +25,7 @@ Understanding the trends in PCI can help policymakers, researchers, and the publ
 
 Check out the interactive visualizations that illustrate the changes in PCI across different sectors and regions in Telangana. These visuals not only present data but also tell a story!
 
-![Your visualization here](link_to_your_visualization)
+![Visit the live web story!](https://nitin-sagar-b.github.io/PCI-data-story-of-Telangana/)
 
 ### 🗺️ Key Visuals:
 
