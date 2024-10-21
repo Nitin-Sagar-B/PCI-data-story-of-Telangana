@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCI Growth Analysis Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Tomorrow', sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: background-color 1s ease;
+            padding: 20px;
+        }
+        h1, p, li {
+            text-align: center;
+            margin: 5px 0;
+        }
+        h1{
+            color: #FFD700; /* Gold */
+            font-size: 36px;
+
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .visualization {
+            width: 100%;
+            height: 80%;
+            background-color: black;
+            margin-top: 10px;
+            transition: box-shadow 0.3s;
+        }
+
+        .visualization:hover {
+            box-shadow: 0 0 20px orange;
+        }
+
+        /* Smooth fade-in transitions */
+        .fade-in {
+            opacity: 0.5;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .big {
+            color:aqua; 
+        }
+
+        .big span {
+            color: inherit; 
+            transition: color 0.3s ease; 
+            align-items: center;
+            font-size: 72px; 
+            padding: 5px;
+        }
+
+        .big:hover {
+            color: goldenrod;
+        }
+
+        .big span:hover {
+            color:bisque;
+            box-shadow: 0 0 20px aqua;
+        }
+
+        .highlight {
+            background-color: #FFEA00; /* Light yellow for emphasis */
+            color: #333; /* Dark color for readability */
+            padding: 2px;
+            border-radius: 4px; /* Slightly rounded corners for a modern look */
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.5s ease; /* Smooth transition */
+        }
+
+        .highlight.visible {
+            opacity: 1; /* Show when the class is added */
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <h1 class="big">
+            <span>Mapping</span> <span>Prosperity:</span> <br> <span>The</span> <span>PCI</span> <span>Journey</span> <span>of</span> <span>Telangana</span>
+        </h1>              
+    </section>
+    <!-- Section 1: Visualization 1 -->
+    <section id="section1" class="section">
+        <p>Welcome to Telangana, a vibrant economic powerhouse in India! Here, the <span class="highlight">Per Capita Income (PCI)</span> isn’t just a number; it represents the dynamic spirit and entrepreneurial vigor of its people. This remarkable ascent in PCI underscores the state’s dedication to <span class="highlight">innovation</span> and <span class="highlight">development</span> while also revealing the challenges of <span class="highlight">income inequality</span>. By delving into these trends, we can better understand Telangana's evolution and its burgeoning potential on the global stage. Let’s embark on this insightful journey!</p>
+        <p>In this data case study, we’ll uncover the trends shaping the PCI of Telangana and the multifaceted factors influencing its trajectory. Ready to dive in?</p>
+        <div class="visualization" id="viz1"></div> <!-- Plotly or D3.js will inject the chart here -->
+    </section>
+    
+    <!-- Section 2: Visualization 2 -->
+    <section id="section2" class="section">
+        <h1>Decoding the Dynamics: Current vs. Constant Prices of PCI</h1>
+        <p><span class="highlight">Current prices </span>provide a snapshot of the economic landscape, reflecting income at a specific moment, but they can <span class="highlight">inflate figures </span>during periods of rising prices. To improve economic insights, these figures are adjusted to constant prices using a selected base year.</p>
+        <p><span class="highlight">Constant prices</span>, by accounting for inflation, offer a clearer understanding of <span class="highlight">true income growth </span>and purchasing power over time. This adjustment allows us to see beyond short-term fluctuations and provides a more accurate representation of economic well-being, enabling informed comparisons across timelines.</p>
+        <p>Interestingly, these trends closely align, indicating that inflation hasn't significantly distorted real income growth. This consistency reflects a stable economic environment beneficial for all stakeholders and policymakers alike!</p>
+        <div class="visualization" id="viz2"></div>
+    </section>
+    
+    <!-- Section 3: Visualization 3 -->
+    <section id="section3" class="section">
+        <h1>Cross-State PCI Comparison: A Closer Look</h1>
+        <p>Prepare for a dynamic journey as we explore a Radial Bar Chart showcasing the <span class="highlight">Per Capita Income (PCI)</span> across three states and the country capital: <span class="highlight">Telangana</span>, <span class="highlight">Tamil Nadu</span>, <span class="highlight">Karnataka</span> and <span class="highlight">Delhi</span>. This visualization highlights the distinct economic disparities and growth trajectories in the region.</p>
+        <p><span class="highlight">Delhi</span> stands tall with the highest PCI, soaring to an impressive <span class="highlight">₹461,910</span> in 2023-24. In contrast, Telangana is not far behind, showing remarkable growth at <span class="highlight">₹347,299</span>, reflecting its robust economic development. Meanwhile, <span class="highlight">Tamil Nadu</span> and <span class="highlight">Karnataka</span> are on a steady upward path, with PCI figures of <span class="highlight">₹313,955</span> and <span class="highlight">₹332,926</span>, respectively.</p>
+        <div class="visualization" id="viz3"></div>
+    </section>
+    
+    <!-- Section 4: Visualization 4 -->
+    <section id="section4" class="section">
+        <h1>Telangana's Economic Standing: A Comparative Overview</h1>
+        <p>This visualization spotlights Telangana's impressive PCI growth, reaching <span class="highlight">₹347,299</span> in 2023-24. Let's explore some key drivers behind this success:</p>
+        <ul>
+            <li><strong>IT and Tech Hub:</strong> With <span class="highlight">Hyderabad</span> as its capital, the state has blossomed into a global technology center, attracting major IT firms and innovative startups.</li>
+            <li><strong>Agricultural Initiatives:</strong> Programs like <span class="highlight">Rythu Bandhu</span> have revolutionized support for farmers, significantly boosting agricultural productivity and income.</li>
+            <li><strong>Infrastructure Development:</strong> Ongoing investments in <span class="highlight">infrastructure</span>—transportation, utilities, and beyond—are creating fertile ground for business growth.</li>
+            <li><strong>Pro-Business Policies:</strong> A proactive state government focuses on ease of doing business and industrial incentives, which has drawn significant investments.</li>
+        </ul>
+        <p>These factors collectively position Telangana as a frontrunner in economic growth, showcasing its potential for sustainable development!</p>
+        <div class="visualization" id="viz4"></div>
+    </section>
+    
+    <!-- Section 5: Visualization 5 -->
+    <section id="section5" class="section">
+        <h1>Key Moments in Telangana's PCI Timeline</h1>
+        <p>This timeline captures the pivotal moments influencing Telangana's Per Capita Income (PCI) growth journey:</p>
+        <ul>
+            <li><strong>2015-16:</strong> The <span class="highlight">infrastructure boom</span> following state formation marked the dawn of significant economic growth.</li>
+            <li><strong>2017-19:</strong> The growth of tech sectors and <span class="highlight">Special Economic Zones (SEZs)</span> significantly enhanced Hyderabad's economic performance.</li>
+            <li><strong>2020-21:</strong> The <span class="highlight">COVID-19 pandemic</span> posed a temporary setback, impacting various sectors and challenging resilience.</li>
+            <li><strong>2022-23:</strong> A robust recovery unfolded, driven by the resurgence of <span class="highlight">IT</span>, <span class="highlight">real estate</span>, and <span class="highlight">manufacturing</span> industries.</li>
+        </ul>
+        <div class="visualization" id="viz5"></div>
+    </section>
+    
+    <!-- Conclusion Section -->
+    <section class="section" id="conclusion">
+        <h1 class="big"><span style="color: goldenrod">Conclusion</span></h1>
+        <span style="font-size: 20px;">
+        <p>
+            The journey of Per Capita Income (PCI) in Telangana reflects a vibrant narrative of growth and resilience. 
+            As we explored, the state's commitment to innovation, infrastructural development, and favorable policies has boosted its economic landscape.
+        </p>
+        <br>
+        <p>
+            Moving forward, continued focus on inclusive growth and technological advancements will be essential in navigating challenges like income inequality. 
+            Let us champion this journey toward prosperity and work collectively for a sustainable economic future.
+        </p>
+        <br>
+        <p>
+            <strong>Author: <a href="https://github.com/nitin-sagar-b" style="color: aqua;">Nitin Sagar B</a></strong> -  Engineering Undergrad and Data Enthusiat
+        </p>
+        <p>Data Sources: 
+            <a href="https://www.niti.gov.in/" style="color: aqua;">NITI Aayog Database</a>, 
+            <a href="https://www.indiabudget.gov.in/economicsurvey/" style="color: aqua;">Economy Survey Report 2023-2024 [Statistical Appendix]</a>
+        </p>
+        <br>
+        <blockquote style="
+            font-style: italic; 
+            border-left: 4px solid #008cba; 
+            padding-left: 15px; 
+            margin: 20px 0; 
+            color: aquamarine; 
+            background-color: black; 
+            border-radius: 5px;">
+            "The most important thing for a country's economic growth is the welfare of its people, which is reflected in their per capita income." 
+            — Amartya Sen
+        </blockquote>
+        </span>
+    </section>
+
+
+<script>
+    document.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('.section');
+        const windowHeight = window.innerHeight;
+    
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const midpoint = rect.top + rect.height / 2;
+    
+            // Check if the midpoint of the section is in view
+            if (midpoint <= windowHeight && midpoint >= 0) {
+                const highlights = section.querySelectorAll('.highlight');
+                highlights.forEach(highlight => {
+                    highlight.classList.add('visible');
+                });
+            } else {
+                const highlights = section.querySelectorAll('.highlight');
+                highlights.forEach(highlight => {
+                    highlight.classList.remove('visible');
+                });
+            }
+        });
+    });
+    </script>    
+
+    <!-- Placeholder to integrate Plotly/D3 visualizations -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+<script>
+  // Visualization 1: Bar Chart - PCI of Telangana (Fix last text position issue)
+  var trace1 = {
+    x: ['2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'],
+    y: [140840, 159395, 179358, 209848, 231326, 225734, 269161, 311649, 347299],
+    type: 'bar',
+    name: 'Telangana',
+    marker: {color: 'orange'},
+    text: [140840, 159395, 179358, 209848, 231326, 225734, 269161, 311649, 347299],
+    textposition: ['outside', 'outside', 'outside', 'outside', 'outside', 'outside', 'outside', 'outside', 'outside']
+  };
+
+  var layout1 = {
+    yaxis: {title: 'PCI (Current Prices)'},
+    paper_bgcolor: 'black',
+    plot_bgcolor: 'black',
+    font: {color: 'white'},
+    responsive: true
+  };
+
+  Plotly.newPlot('viz1', [trace1], layout1);
+
+  // Visualization 2: Line Chart - PCI (Constant vs Current Prices, dual y-axis)
+  var trace2 = {
+    x: ['2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'],
+    y: [112267, 121512, 131503, 146777, 153286, 140743, 156455, 169354, 183854],
+    mode: 'lines+markers',
+    name: 'Constant Prices',
+    line: {color: 'orange', width: 7},
+    marker: {color: 'orange', size: 10},
+    yaxis: 'y1'  // Left Y-axis
+  };
+
+  var trace3 = {
+    x: ['2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'],
+    y: [140840, 159395, 179358, 209848, 231326, 225734, 269161, 311649, 347299],
+    mode: 'lines+markers',
+    name: 'Current Price',
+    line: {color: 'lime', width: 7},
+    marker: {color: 'lime', size: 10},
+    yaxis: 'y2'  // Right Y-axis
+  };
+
+  var layout2 = {
+    yaxis: {
+
+        tickvals: [],  // Hides tick marks
+        ticktext: []   // Hides tick labels
+    },
+    yaxis2: {
+        overlaying: 'y',
+        // Change to 'right' for better alignment
+        tickvals: [],  // Hides tick marks
+        ticktext: []   // Hides tick labels
+    },
+    paper_bgcolor: 'black',
+    plot_bgcolor: 'black',
+    font: {color: 'white'},
+    responsive: true
+};
+
+
+  Plotly.newPlot('viz2', [trace2, trace3], layout2);
+
+// Visualization 3: Radial Bar Chart
+var data = {
+    'Tamil Nadu': [142028, 156595, 175276, 194373, 206165, 209628, 242253, 275583, 313955],
+    'Karnataka': [148108, 169898, 185840, 205245, 222141, 221781, 266866, 304474, 332926],
+    'Telangana': [140840, 159395, 179358, 209848, 231326, 225734, 269161, 311649, 347299],
+    'Delhi': [270261, 295558, 318323, 338730, 355798, 322311, 376217, 430120, 461910],
+};
+
+var years = ['2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'];
+var colors = ['#FF5733', '#33FF57', '#3380FF', '#E6B333'];
+var states = ['Tamil Nadu', 'Karnataka', 'Telangana', 'Delhi'];
+
+var data3 = [];
+
+// Adding radial bars for each state
+for (var i = 0; i < states.length; i++) {
+    data3.push({
+        type: 'barpolar',
+        r: data[states[i]],
+        theta: years,
+        name: states[i],
+        marker: {color: colors[i]},
+        opacity: 0.8,
+    });
+}
+
+// Layout configuration
+var layout3 = {
+    polar: {
+        radialaxis: {
+            showticklabels: false,  // Hides radial axis labels
+            visible: true
+        },
+        bgcolor: 'black'
+    },
+    paper_bgcolor: 'black',
+    plot_bgcolor: 'black',
+    font: {color: 'white'},
+    legend: {x: 0.75, y: 1.1},
+    responsive: true
+};
+
+// Render the plot
+Plotly.newPlot('viz3', data3, layout3);
+
+
+  // Visualization 4: Grouped Bar Chart (side-by-side bars)
+  var trace4_1 = {
+    x: ['2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'],
+    y: [142028, 156595, 175276, 194373, 206165, 209628, 242253, 275583, 313955],
+    name: 'Tamil Nadu',
+    type: 'bar',
+    marker: {color: '#FF5733'}
+  };
+
+  var trace4_2 = {
+    x: ['2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'],
+    y: [148108, 169898, 185840, 205245, 222141, 221781, 266866, 304474, 332926],
+    name: 'Karnataka',
+    type: 'bar',
+    marker: {color: '#33FF57'}
+  };
+
+  var trace4_3 = {
+    x: ['2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'],
+    y: [140840, 159395, 179358, 209848, 231326, 225734, 269161, 311649, 347299],
+    name: 'Telangana',
+    type: 'bar',
+    marker: {color: '#3380FF'}
+  };
+
+  var trace4_4 = {
+    x: ['2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'],
+    y: [270261, 295558, 318323, 338730, 355798, 322311, 376217, 430120, 461910],
+    name: 'Delhi',
+    type: 'bar',
+    marker: {color: '#E6B333'}
+  };
+
+  var layout4 = {
+    yaxis: {title: 'PCI (Current Prices)'},
+    paper_bgcolor: 'black',
+    plot_bgcolor: 'black',
+    font: {color: 'white'},
+    barmode: 'group',
+    responsive: true
+  };
+
+  Plotly.newPlot('viz4', [trace4_1, trace4_2, trace4_3, trace4_4], layout4);
+
+// Visualization 5: Radial Line Plot (Scatterpolar)
+var data5 = [
+    {
+        type: 'scatterpolar',
+        r: [140840, 159395, 179358, 209848, 231326, 225734, 269161, 311649, 347299],  // Telangana
+        theta: ['2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'],
+        name: 'Telangana',
+        mode: 'lines+markers'
+    }
+];
+
+// Layout Configuration
+var layout5 = {
+    polar: {
+        radialaxis: {
+            visible: true,
+            showline: true,
+            linewidth: 2,
+            linecolor: 'white' 
+        },
+        angularaxis: {
+            showline: true,
+            linewidth: 2,
+            linecolor: 'white' 
+        },
+        bgcolor: 'black'
+
+    },
+    paper_bgcolor: 'black', 
+    plot_bgcolor: 'black', 
+    font: {color: 'white'},  
+    legend: {x: 0.75, y: 1.1},
+    responsive: true
+}
+
+// Render the plot
+Plotly.newPlot('viz5', data5, layout5);
+
+</script>
+
+</body>
+</html>
